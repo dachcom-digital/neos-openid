@@ -1,0 +1,7 @@
+resources:
+  methods:
+    Dachcom_OpenID_BackendLogin: 'method(Dachcom\OpenID\Controller\StandardController->(index|remote|authenticate|logout)Action()) || method(TYPO3\Neos\Controller\LoginController->(index|logout)Action()) || method(TYPO3\Flow\Security\Authentication\Controller\AbstractAuthenticationController->(authenticate)Action())'
+acls:
+  Everybody:
+    methods:
+      Dachcom_OpenID_BackendLogin: GRANT

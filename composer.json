@@ -1,0 +1,15 @@
+{
+    "name": "dachcom/neos-openid",
+    "type": "typo3-flow-package",
+    "description": "Adds OpenID authentication to TYPO3 Neos",
+    "require": {
+        "typo3/flow": "2.3.x",
+        "typo3/neos": "1.2.*",
+        "iignatov/lightopenid": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Dachcom\\OpenID": "Classes"
+        }
+    }
+}

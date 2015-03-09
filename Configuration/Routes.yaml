@@ -1,0 +1,40 @@
+-
+  name: 'OpenID Form'
+  uriPattern: 'dachcom.openid'
+  defaults:
+    '@package': 'Dachcom.OpenID'
+    '@controller': 'Standard'
+    '@action': 'index'
+    '@format': 'html'
+  httpMethods: ['GET']
+
+-
+  name: 'OpenID Authenticate'
+  uriPattern: 'dachcom.openid'
+  defaults:
+    '@package': 'Dachcom.OpenID'
+    '@controller': 'Standard'
+    '@action': 'authenticate'
+    '@format': 'html'
+  httpMethods: ['POST']
+
+-
+  name: 'OpenID ReturnUrl'
+  uriPattern: 'dachcom.openid/remote'
+  defaults:
+    '@package': 'Dachcom.OpenID'
+    '@controller': 'Standard'
+    '@action': 'remote'
+    '@format': 'html'
+  httpMethods: ['GET']
+  appendExceedingArguments: TRUE
+
+-
+  name: 'OpenID Logout'
+  uriPattern: 'dachcom.openid/logout'
+  defaults:
+    '@package': 'Dachcom.OpenID'
+    '@controller': 'Standard'
+    '@action': 'logout'
+    '@format': 'html'
+  httpMethods: ['GET']

@@ -1,0 +1,35 @@
+#Dachcom:
+#  OpenID:
+#    users:
+#      -
+#        alias: admin
+#        identity: http://admin.openid-provider.com/
+
+TYPO3:
+  Flow:
+    security:
+      authentication:
+        authenticationStrategy: oneToken
+        providers:
+          OpenIDBackendProvider:
+            provider: 'Dachcom\OpenID\Security\Authentication\Provider\OpenIDProvider'
+            requestPatterns:
+              controllerObjectName: 'Dachcom\OpenID\Controller\.*|TYPO3\Neos\Controller\.*|TYPO3\Neos\Service\.*|TYPO3\Media\Controller\.*'
+            entryPoint: 'WebRedirect'
+            entryPointOptions:
+              routeValues:
+                '@package':    'Dachcom.OpenID'
+                '@controller': 'Standard'
+                '@action':     'index'
+                '@format':     'html'
+          Typo3BackendProvider:
+            provider: 'PersistedUsernamePasswordProvider'
+            requestPatterns:
+              controllerObjectName: 'TYPO3\Neos\Controller\.*|TYPO3\Neos\Service\.*|TYPO3\Media\Controller\.*'
+            entryPoint: 'WebRedirect'
+            entryPointOptions:
+              routeValues:
+                '@package':    'TYPO3.Neos'
+                '@controller': 'Login'
+                '@action':     'index'
+                '@format':     'html'
