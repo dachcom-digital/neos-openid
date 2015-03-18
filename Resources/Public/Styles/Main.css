@@ -1,0 +1,15 @@
+.openid {
+    text-align: right;
+    margin-top: -10px;
+}
+.link-openid {
+    color: #FF8600;
+    font-size: 0.8em;
+    text-decoration: none;
+}
+.link-openid:before {
+    content: '» ';
+}
+.link-openid:hover {
+    text-decoration: underline;
+}

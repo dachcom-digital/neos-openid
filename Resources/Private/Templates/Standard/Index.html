@@ -3,6 +3,7 @@
 <f:section name="head">
     <title>TYPO3 Neos OpenID</title>
     <link rel="stylesheet" href="{f:uri.resource(package: 'TYPO3.Neos', path: 'Styles/Login.css')}" />
+    <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/Main.css')}" />
     <script src="{f:uri.resource(package: 'TYPO3.Neos',path: 'Library/jquery/jquery-2.0.3.js')}"></script>
     <script src="{f:uri.resource(package: 'TYPO3.Neos',path: 'Library/jquery-ui/js/jquery-ui-1.10.4.custom.js')}"></script>
 </f:section>
@@ -30,6 +31,9 @@
                             </div>
                         </f:else>
                     </f:if>
+                    <div class="neos-controls openid">
+                        <f:link.action class="link-openid" package="TYPO3.Neos" action="index" controller="login"><f:translate id="backToLogin" /></f:link.action>
+                    </div>
                     <div class="neos-actions">
                         <!-- Forgot password link will be here -->
                         <f:form.button type="submit" class="neos-span5 neos-pull-right neos-button neos-login-btn">

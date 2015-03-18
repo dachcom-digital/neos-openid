@@ -1,0 +1,5 @@
+-
+  requestFilter: 'isPackage("TYPO3.Neos") && isController("Login") && isAction("index")'
+  viewObjectName: 'TYPO3\Fluid\View\TemplateView'
+  options:
+    templatePathAndFilename: resource://Dachcom.OpenID/Private/Templates/Login/Index.html
