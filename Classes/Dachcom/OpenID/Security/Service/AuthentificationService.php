@@ -16,17 +16,22 @@ class AuthentificationService {
      */
     public function authenticate(OpenID $authenticationToken) {
         $httpRequest = Request::createFromEnvironment();
+        $port = (int) $httpRequest->getBaseUri()->getPort();
+        if (empty($port) || $port === 80 || $port === 443) {
+            $port = '';
+        }
+
         $openid = new \LightOpenID(
             $httpRequest->getBaseUri()->getScheme() . '://' .
             $httpRequest->getBaseUri()->getHost() .
-            ($httpRequest->getBaseUri()->getPort() ? ':' . $httpRequest->getBaseUri()->getPort() : '')
+            ($port ? ':' . $port : '')
         );
 
         $actionRequest = new ActionRequest($httpRequest);
 
         $uriBuilder = new UriBuilder();
         $uriBuilder->setRequest($actionRequest);
-        $uriBuilder->setCreateAbsoluteUri(true);
+        $uriBuilder->setCreateAbsoluteUri(TRUE);
 
         if ($openid->mode) {
             if ($openid->validate()) {
