@@ -4,7 +4,7 @@
     "description": "Adds OpenID authentication to TYPO3 Neos",
     "require": {
         "typo3/flow": "2.3.x",
-        "typo3/neos": "1.2.*",
+        "typo3/neos": "2.0.*",
         "iignatov/lightopenid": "*"
     },
     "autoload": {
