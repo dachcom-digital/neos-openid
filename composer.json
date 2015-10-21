@@ -3,7 +3,7 @@
     "type": "typo3-flow-package",
     "description": "Adds OpenID authentication to TYPO3 Neos",
     "require": {
-        "typo3/neos": "2.*.*",
+        "typo3/neos": "2.0.*",
         "iignatov/lightopenid": "*"
     },
     "autoload": {
